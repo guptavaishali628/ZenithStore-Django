@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- 3. HERO BANNER SECTION -->
+    <section class="hero-banner-section">
+        <div class="container">
+            <div class="hero-banner-card">
+                <div class="banner-overlay">
+                    <span class="badge-tag">NEW COLLECTION 2026</span>
+                    <h1>Experience Pinnacle Shopping</h1>
+                    <p>Discover hand-crafted quality, high-performance technology, and modern lifestyle essentials.</p>
+                    <a href="#" class="btn-primary-gold">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. POPULAR PRODUCTS SECTION -->
+    <main class="popular-products-section">
+        <div class="container">
+            
+            <!-- Section Header -->
+            <div class="section-heading-bar">
+                <h2 class="section-title">Popular products</h2>
+                <a href="#" class="see-all-btn">See all</a>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/electronics/item-1-headphone.jpeg' %}" alt="Headphones">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Just another product name</a>
+                        <div class="product-price">$179.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/electronics/item-2-watch.jpeg' %}" alt="Smart Watch">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Some item name here</a>
+                        <div class="product-price">$280.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/electronics/item-3-watch.jpeg' %}" alt="Smart Device">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Great product name here</a>
+                        <div class="product-price">$56.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/electronics/item-4-headphone.jpeg' %}" alt="Gaming Headset">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Just another product name</a>
+                        <div class="product-price">$179.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/accessories/item-1-sunglasses.jpeg' %}" alt="Sunglasses">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Classic UV Shield Shades</a>
+                        <div class="product-price">$95.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/fashion/item-1-shoes.jpeg' %}" alt="Shoes">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Aero Dynamic Sneakers</a>
+                        <div class="product-price">$145.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/electronics/item-5-headphone.jpeg' %}" alt="Minimal Headphones">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Zenith Sound Studio Pro</a>
+                        <div class="product-price">$320.00</div>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <img src="{% static 'images/items/electronics/item-6-camera.jpeg' %}" alt="Camera">
+                    </div>
+                    <div class="product-details">
+                        <a href="#" class="product-title">Vintage Film Camera 35mm</a>
+                        <div class="product-price">$210.00</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+{% endblock content %}
