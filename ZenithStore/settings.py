@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 1-> app (category)
+    'category',
+    # 2-> app (accounts)
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ZenithStore.wsgi.application'
+# custom model user tell here
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
