@@ -1,0 +1,92 @@
+{% load static %}
+    <footer class="sober-footer">
+        <div class="container">
+            <div class="footer-content-grid">
+                
+                <!-- Brand Info Column -->
+                <div class="footer-col brand-info">
+                    <a href="/" class="footer-logo">
+                        <img src="{% static 'logo.jpeg' %}" alt="ZenithStore Logo" class="footer-logo-img">
+                        <span class="footer-brand-name">Zenith<span class="gold-text">Store</span></span>
+                    </a>
+                    <p>Your premier destination for high-quality electronics, accessories, and curated lifestyle essentials with guaranteed reliability.</p>
+                    <div class="footer-social-links">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Store Catalog</a></li>
+                        <li><a href="#">Popular Products</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Support -->
+                <div class="footer-col">
+                    <h5>Customer Care</h5>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="footer-col">
+                    <h5>Get In Touch</h5>
+                    <ul class="contact-simple">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Innovation Plaza, Tech Avenue, NY 10001</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:support@zenithstore.com">support@zenithstore.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </li>
+                    </ul>
+
+                    <div class="footer-newsletter">
+                        <form action="#" method="POST" class="newsletter-form">
+                            {% csrf_token %}
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sub-footer Bar -->
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 ZenithStore. All rights reserved.</p>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                    <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+   
