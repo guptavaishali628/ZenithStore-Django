@@ -1,3 +1,22 @@
+# Virtual Environment
 env/
 venv/
 .venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Environment Secrets (MySQL password, secret key)
+.env
+.env.*
+
+# Media files (Category aur products ki uploaded images)
+media/
+
+# Static files
+staticfiles/
+
+# Editor files
+.vscode/
+Thumbs.db
