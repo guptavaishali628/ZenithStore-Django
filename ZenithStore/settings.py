@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'category',
     # 2-> app (accounts)
     'accounts',
+    # 3-> app (store)
+    'store',
 ]
 
 MIDDLEWARE = [
