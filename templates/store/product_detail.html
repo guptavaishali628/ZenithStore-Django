@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<!-- Specific Product Detail CSS -->
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<section class="section-content padding-y">
+  <div class="container">
+
+    <!-- ============================ BACK BUTTON / TOP NAV ================================= -->
+    <div class="detail-top-nav">
+      <!-- Browser history back ya direct Store page link -->
+      <a href="javascript:history.back()" class="btn-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back</span>
+      </a>
+    </div>
+
+    <!-- ============================ PRODUCT DETAIL CARD ================================= -->
+    <div class="card card-detail">
+      <div class="row no-gutters">
+
+        <!-- Left Column: Product Image Gallery -->
+        <aside class="col-md-6">
+          <article class="gallery-wrap">
+            <div class="img-big-wrap">
+              <img src="https://images.unsplash.com/photo-1542272604-780c96856592?w=600&auto=format&fit=crop&q=80" alt="Off-White Odsy-1000 Low-Top Sneakers">
+            </div>
+          </article>
+        </aside>
+
+        <!-- Right Column: Product Information & Controls -->
+        <main class="col-md-6 border-left">
+          <form action="#" method="POST">
+
+            <article class="product-info-wrap">
+              
+              <!-- Product Title -->
+              <h2 class="product-title">Off-White Odsy-1000 Low-Top Sneakers</h2>
+
+              <!-- Product Price -->
+              <div class="product-price">$815.00</div>
+
+              <!-- Product Description -->
+              <p class="product-description">
+                Virgil Abloh's Off-White is a streetwear-inspired collection that continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown Odsy-1000 low-top sneakers.
+              </p>
+
+              <!-- Choose Color (Chip Style) -->
+              <div class="variation-group">
+                <label class="variation-label">Choose Color</label>
+                <div class="variation-chips">
+                  <label class="btn-chip">
+                    <input type="radio" name="color_demo" value="silver">
+                    <span class="btn-label">Silver</span>
+                  </label>
+                  <label class="btn-chip">
+                    <input type="radio" name="color_demo" value="gray">
+                    <span class="btn-label">Gray</span>
+                  </label>
+                  <label class="btn-chip">
+                    <input type="radio" name="color_demo" value="gold" checked>
+                    <span class="btn-label">Gold</span>
+                  </label>
+                  <label class="btn-chip">
+                    <input type="radio" name="color_demo" value="black">
+                    <span class="btn-label">Black</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Select Size (Chip Style) -->
+              <div class="variation-group">
+                <label class="variation-label">Select Size</label>
+                <div class="variation-chips">
+                  <label class="btn-chip">
+                    <input type="radio" name="size_demo" value="s">
+                    <span class="btn-label">S</span>
+                  </label>
+                  <label class="btn-chip">
+                    <input type="radio" name="size_demo" value="m" checked>
+                    <span class="btn-label">M</span>
+                  </label>
+                  <label class="btn-chip">
+                    <input type="radio" name="size_demo" value="l">
+                    <span class="btn-label">L</span>
+                  </label>
+                  <label class="btn-chip">
+                    <input type="radio" name="size_demo" value="xl">
+                    <span class="btn-label">XL</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Add to Cart Button -->
+              <div class="mt-4">
+                <button type="button" class="btn-zenith-cart">
+                  <span>Add to cart</span>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+
+            </article>
+          </form>
+        </main>
+
+      </div>
+    </div>
+    <!-- ============================ PRODUCT DETAIL CARD END ================================= -->
+
+    <!-- ============================ CUSTOMER REVIEWS SECTION ================================= -->
+    <div class="reviews-section">
+      <h3 class="section-heading-reviews">Customer Reviews</h3>
+
+      <div class="card-review">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="reviewer-name">Rahul Sharma</div>
+          <span class="review-date">24 Oct, 2026</span>
+        </div>
+        <div class="rating-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p class="text-muted mb-0">
+          The sneaker design and cushioning quality are incredible. Fits perfectly according to the size chart!
+        </p>
+      </div>
+
+    </div>
+    <!-- ============================ CUSTOMER REVIEWS END ================================= -->
+
+  </div>
+</section>
+
+{% endblock content %}

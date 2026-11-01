@@ -1,0 +1,243 @@
+/* ZenithStore Product Detail Styles */
+:root {
+  --zenith-dark: #0a1128;
+  --zenith-yellow: #e5a93c;
+  --zenith-yellow-hover: #cf932b;
+  --zenith-border: #e2e8f0;
+  --zenith-text-muted: #64748b;
+  --zenith-bg: #f8fafc;
+}
+
+body {
+  background-color: var(--zenith-bg);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1e293b;
+}
+
+.padding-y {
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+/* Back Button & Top Navigation */
+.detail-top-nav {
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--zenith-border);
+  color: var(--zenith-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--zenith-dark);
+  color: var(--zenith-yellow);
+  border-color: var(--zenith-dark);
+  text-decoration: none;
+}
+
+/* Main Detail Card */
+.card-detail {
+  background: #ffffff;
+  border: 1px solid var(--zenith-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(10, 17, 40, 0.04);
+}
+
+/* Gallery & Image Box */
+.gallery-wrap {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px;
+  padding: 30px;
+  border-right: 1px solid var(--zenith-border);
+}
+
+.gallery-wrap .img-big-wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-wrap .img-big-wrap img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+/* Product Info */
+.product-info-wrap {
+  padding: 32px 35px;
+}
+
+.product-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--zenith-dark);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.product-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--zenith-dark);
+  margin-bottom: 18px;
+}
+
+.product-description {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--zenith-text-muted);
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--zenith-border);
+  padding-bottom: 22px;
+}
+
+/* Variations: Select Dropdowns & Radio Buttons */
+.variation-group {
+  margin-bottom: 20px;
+}
+
+.variation-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--zenith-dark);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.variation-select {
+  border-radius: 8px;
+  border: 1px solid var(--zenith-border);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #334155;
+  height: 42px;
+  padding: 6px 14px;
+}
+
+.variation-select:focus {
+  border-color: var(--zenith-yellow);
+  box-shadow: 0 0 0 0.15rem rgba(229, 169, 60, 0.25);
+}
+
+/* Variation Chips (Button Style) */
+.variation-chips .btn-chip {
+  display: inline-block;
+  margin: 0 6px 8px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.variation-chips input {
+  position: absolute;
+  opacity: 0;
+}
+
+.variation-chips .btn-label {
+  display: inline-block;
+  padding: 7px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--zenith-border);
+  background-color: #ffffff;
+  color: #334155;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.variation-chips input:checked + .btn-label {
+  background-color: var(--zenith-dark);
+  color: var(--zenith-yellow);
+  border-color: var(--zenith-dark);
+}
+
+/* Action Buttons */
+.btn-zenith-cart {
+  background-color: var(--zenith-yellow);
+  border: 1px solid var(--zenith-yellow);
+  color: var(--zenith-dark);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-zenith-cart:hover {
+  background-color: var(--zenith-yellow-hover);
+  border-color: var(--zenith-yellow-hover);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-zenith-added {
+  background-color: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-zenith-added:hover {
+  background-color: #059669;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Reviews Box */
+.reviews-section {
+  margin-top: 45px;
+}
+
+.section-heading-reviews {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--zenith-dark);
+  margin-bottom: 20px;
+}
+
+.card-review {
+  background: #ffffff;
+  border: 1px solid var(--zenith-border);
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+.card-review .reviewer-name {
+  font-weight: 700;
+  color: var(--zenith-dark);
+  margin-bottom: 4px;
+}
+
+.rating-stars {
+  color: var(--zenith-yellow);
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: var(--zenith-text-muted);
+}
