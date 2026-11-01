@@ -36,13 +36,13 @@
 
             <!-- Search & Category Bar -->
             <div class="search-category-wrapper">
-                <!-- data-toggle="dropdown" aur dropdown class added-->
-                <div class="category-btn dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>All category</span>
-                    <i class="fa-solid fa-chevron-down arrow-down"></i>
+                <div class="dropdown">
+                    <div class="category-btn dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                        <i class="fa-solid fa-bars"></i>
+                        <span>All category</span>
+                        <i class="fa-solid fa-chevron-down arrow-down"></i>
+                    </div>
 
-                    <!-- Dropdown Menu -->
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'store' %}">All Products</a>
                         {% for category in links %}
@@ -50,7 +50,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <a href="#" class="store-link-btn">Store</a>
+                <a href="{% url 'store' %}" class="store-link-btn">Store</a>
                 <form action="#" method="GET" class="search-form">
                     <input type="text" placeholder="Search" name="q" class="search-input">
                     <button type="submit" class="search-submit-btn">

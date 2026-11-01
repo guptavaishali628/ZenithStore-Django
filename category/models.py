@@ -16,6 +16,7 @@ class Category(models.Model):
     # context_processors.py
     def get_url(self):
             return reverse('products_by_category', args=[self.slug])
+    
     # string representation of model
     def __str__(self):
         return self.category_name
