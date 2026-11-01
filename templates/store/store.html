@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<!-- Store Specific CSS -->
+<link rel="stylesheet" href="{% static 'css/store.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<!-- SECTION PAGETOP -->
+<section class="section-pagetop">
+  <div class="container">
+    <h2 class="title-page">Our Store</h2>
+  </div>
+</section>
+<!--  SECTION PAGETOP END// -->
+
+<!--SECTION CONTENT-->
+<section class="section-content padding-y">
+  <div class="container">
+    <div class="row">
+
+      <!-- Left Filters Sidebar -->
+      <aside class="col-md-3">
+        <div class="card card-filter">
+          
+          <!-- Categories Filter -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#collapse_1" data-toggle="collapse" aria-expanded="true">
+                <h6 class="title">Categories</h6>
+                <i class="icon-control fa fa-chevron-down"></i>
+              </a>
+            </header>
+            <div class="collapse show" id="collapse_1">
+            <div class="card-body pt-0">
+                <ul class="list-menu">
+                  <li><a href="#">All Products</a></li>
+                  <li><a href="#">Men's Jeans</a></li>
+                  <li><a href="#">Casual Shirts</a></li>
+                  <li><a href="#">Printed T-Shirts</a></li>
+                  <li><a href="#">Watches & Gear</a></li>
+                  <li><a href="#">Lifestyle Accessories</a></li>
+                </ul>
+            </div>
+            </div>
+          </article>
+
+          <!-- Sizes Filter -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#collapse_2" data-toggle="collapse" aria-expanded="true">
+                <h6 class="title">Sizes</h6>
+                <i class="icon-control fa fa-chevron-down"></i>
+              </a>
+            </header>
+            <div class="collapse show" id="collapse_2">
+              <div class="card-body pt-0">
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn">XS</span>
+                </label>
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn">SM</span>
+                </label>
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn">LG</span>
+                </label>
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn">XXL</span>
+                </label>
+              </div>
+            </div>
+          </article>
+
+          <!-- Price Range Filter -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#collapse_3" data-toggle="collapse" aria-expanded="true">
+                <h6 class="title">Price range</h6>
+                <i class="icon-control fa fa-chevron-down"></i>
+              </a>
+            </header>
+            <div class="collapse show" id="collapse_3">
+              <div class="card-body pt-0">
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label class="small text-muted mb-1">Min</label>
+                    <input class="form-control form-control-sm" placeholder="$0" type="number">
+                  </div>
+                  <div class="form-group col-6">
+                    <label class="small text-muted mb-1">Max</label>
+                    <input class="form-control form-control-sm" placeholder="$1,000" type="number">
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-block btn-zenith-dark mt-2">Apply</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </aside>
+
+      <!-- Right Products Grid -->
+      <main class="col-md-9">
+        <header class="border-bottom mb-4 pb-3">
+          <div class="form-inline">
+            <span class="mr-md-auto font-weight-bold text-muted">{{ product_count }} Items found</span>
+          </div>
+        </header>
+
+        <div class="row">
+        {% for product in products %}
+          <!-- Product Card 1 -->
+            <div class="col-6 col-md-4">
+                <figure class="card card-product-grid">
+                <div class="img-wrap">
+                    <img src="{{ product.images.url }}" alt="{{ product.name }}">
+                </div>
+                <figcaption class="info-wrap">
+                    <div class="fix-height">
+                    <a href="#" class="title">{{ product.product_name }}</a>
+                    <div class="price-wrap mt-2">
+                        <span class="price">${{ product.price|floatformat:2 }}</span>
+                    </div>
+                    </div>
+                    <a href="#" class="btn btn-zenith-primary mt-3">Add to cart</a>
+                </figcaption>
+                </figure>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Static Pagination -->
+        <nav class="mt-4" aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </main>
+
+    </div>
+  </div>
+</section>
+<!--  SECTION CONTENT END -->
+
+{% endblock content %}

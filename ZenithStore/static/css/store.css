@@ -1,0 +1,329 @@
+/* ================= ZenithStore Store Page Styles ================= */
+:root {
+  --zenith-dark: #0a1128;
+  --zenith-yellow: #e5a93c;
+  --zenith-yellow-hover: #cf932b;
+  --zenith-border: #e2e8f0;
+  --zenith-text-muted: #64748b;
+  --zenith-bg: #f8fafc;
+}
+
+body {
+  background-color: var(--zenith-bg);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1e293b;
+}
+
+/* Page Header */
+.section-pagetop {
+  padding: 24px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--zenith-border);
+  margin-bottom: 25px;
+}
+
+.title-page {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--zenith-dark);
+  margin: 0;
+}
+
+.padding-y {
+  padding-top: 20px;
+  padding-bottom: 45px;
+}
+
+/* Filters Sidebar */
+.card-filter {
+  border: 1px solid var(--zenith-border);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+.filter-group {
+  border-bottom: 1px solid var(--zenith-border);
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.filter-group .card-header {
+  background: transparent;
+  padding: 14px 18px;
+  border: none;
+}
+
+.filter-group .title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--zenith-dark);
+  margin-bottom: 0;
+}
+
+.filter-group a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--zenith-dark);
+}
+
+.filter-group .icon-control {
+  font-size: 12px;
+  color: var(--zenith-text-muted);
+}
+
+.list-menu {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+
+.list-menu li {
+  margin-bottom: 9px;
+}
+
+/* Category links */
+.list-menu a {
+  color: var(--zenith-text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.list-menu a:hover {
+  color: var(--zenith-yellow);
+}
+
+/* ================= Category Ke Neeche 2 Photo Grid ================= */
+.category-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* Category Photo Div (Pure div par hover zoom effect) */
+.category-photo-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--zenith-border);
+  background: #ffffff;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.category-photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pure div par hover zoom-in */
+.category-photo-item:hover {
+  transform: scale(1.05);
+  border-color: var(--zenith-yellow);
+  box-shadow: 0 6px 16px rgba(10, 17, 40, 0.12);
+  z-index: 2;
+}
+
+/* Size Filter Buttons */
+.checkbox-btn {
+  display: inline-block;
+  margin: 0 4px 8px 0;
+  position: relative;
+}
+
+.checkbox-btn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-btn .btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border: 1px solid var(--zenith-border);
+  background-color: #ffffff;
+  color: #334155;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.checkbox-btn input:checked + .btn {
+  background-color: var(--zenith-dark);
+  color: var(--zenith-yellow);
+  border-color: var(--zenith-dark);
+}
+
+/* ================= Products Grid Layout ================= */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* Product Cards: Pure card / div par hover zoom-in */
+.card-product-grid {
+  background: #ffffff;
+  border: 1px solid var(--zenith-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0;
+  transition: transform 0.3s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Pure card div hover hone par zoom in hoga */
+.card-product-grid:hover {
+  transform: scale(1.03);
+  border-color: var(--zenith-yellow);
+  box-shadow: 0 8px 20px rgba(10, 17, 40, 0.08);
+  z-index: 1;
+}
+
+.card-product-grid .img-wrap {
+  height: 220px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--zenith-border);
+}
+
+.card-product-grid .img-wrap img {
+  max-height: 85%;
+  max-width: 85%;
+  object-fit: contain;
+  display: block;
+}
+
+.card-product-grid .info-wrap {
+  padding: 16px;
+}
+
+.card-product-grid .fix-height {
+  height: 70px;
+  overflow: hidden;
+}
+
+/* Title (Without vendor warnings) */
+.card-product-grid .title {
+  font-size: 0.95rem;
+  color: var(--zenith-dark);
+  font-weight: 600;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.2s ease;
+}
+
+.card-product-grid .title:hover {
+  color: var(--zenith-yellow);
+}
+
+.card-product-grid .price {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--zenith-dark);
+}
+
+/* Action Buttons */
+.btn-zenith-primary {
+  background-color: var(--zenith-yellow);
+  border: 1px solid var(--zenith-yellow);
+  color: var(--zenith-dark);
+  font-weight: 700;
+  border-radius: 7px;
+  padding: 9px;
+  font-size: 0.92rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-zenith-primary:hover {
+  background-color: var(--zenith-yellow-hover);
+  border-color: var(--zenith-yellow-hover);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-zenith-dark {
+  background-color: var(--zenith-dark);
+  border: 1px solid var(--zenith-dark);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-zenith-dark:hover {
+  background-color: #142045;
+  color: var(--zenith-yellow);
+}
+
+/* Pagination */
+.pagination .page-item.active .page-link {
+  background-color: var(--zenith-dark);
+  border-color: var(--zenith-dark);
+  color: var(--zenith-yellow);
+  font-weight: 700;
+}
+
+.pagination .page-link {
+  color: var(--zenith-dark);
+  border: 1px solid var(--zenith-border);
+  border-radius: 6px;
+  margin: 0 3px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ================= Responsive Layout (Mobile / Tablet) ================= */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card-product-grid .img-wrap {
+    height: 155px;
+  }
+
+  .card-product-grid .info-wrap {
+    padding: 10px;
+  }
+
+  .card-product-grid .fix-height {
+    height: 50px;
+  }
+
+  .card-product-grid .title {
+    font-size: 0.85rem;
+  }
+
+  .card-product-grid .price {
+    font-size: 0.95rem;
+  }
+
+  .btn-zenith-primary {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}
