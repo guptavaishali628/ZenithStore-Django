@@ -98,10 +98,17 @@
 
               <!-- Add to Cart Button -->
               <div class="mt-4">
+                {% if single_product.stock <= 0 %}
+                <div class="out-of-stock-badge">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                  <span>Out of Stock</span>
+                </div>
+                {% else %}
                 <button type="button" class="btn-zenith-cart">
                   <span>Add to cart</span>
                   <i class="fa-solid fa-cart-shopping"></i>
                 </button>
+                {% endif %}
               </div>
 
             </article>

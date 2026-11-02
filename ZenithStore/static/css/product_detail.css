@@ -205,6 +205,25 @@ body {
   text-decoration: none;
 }
 
+/* out of stock msg  */
+.out-of-stock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.out-of-stock-badge i {
+  font-size: 1.1rem;
+}
+
 /* Reviews Box */
 .reviews-section {
   margin-top: 45px;
