@@ -28,5 +28,13 @@ def store(request, category_slug=None):
 # product detail function
 
 def product_detail(request, category_slug, product_slug):
-     return render(request,'store/product_detail.html')
+        # single product view
+        try:
+           single_product = get_object_or_404(Product,category__slug=category_slug, slug=product_slug)
+        except Exception as e:
+            raise e
+        context={ 
+             'single_product': single_product,
+        }
+        return render(request,'store/product_detail.html', context)
 

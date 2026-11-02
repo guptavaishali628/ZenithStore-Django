@@ -22,7 +22,7 @@
             <!-- Section Header -->
             <div class="section-heading-bar">
                 <h2 class="section-title">Popular products</h2>
-                <a href="#" class="see-all-btn">See all</a>
+                <a href="{% url 'store' %}" class="see-all-btn" style="text-decoration: none;">See all</a>
             </div>
 
             <!-- Products Grid -->
@@ -31,10 +31,10 @@
                 <!-- Product Card 1 -->
                 <div class="product-card">
                     <div class="product-thumb">
-                        <img src="{{product.images.url}}" alt="{{product.product_name}}">
+                       <a href="{{product.get_url}}"> <img src="{{product.images.url}}" alt="{{product.product_name}}"></a>
                     </div>
                     <div class="product-details">
-                        <a href="#" class="product-title">{{product.product_name}}</a>
+                        <a href="{{product.get_url}}" class="product-title" style="text-decoration: none;">{{product.product_name}}</a>
                         <div class="product-price">$ {{product.price}}</div>
                     </div>
                 </div>
