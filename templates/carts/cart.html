@@ -91,16 +91,16 @@
                 
                 <dl class="d-flex justify-content-between mb-2">
                     <dt class="text-muted fw-normal">Total price:</dt>
-                    <dd class="text-end fw-bold text-dark mb-0">$847.00</dd>
+                    <dd class="text-end fw-bold text-dark mb-0">$ {{ total|floatformat:2 }}</dd>
                 </dl>
                 <dl class="d-flex justify-content-between mb-2">
                     <dt class="text-muted fw-normal">Tax (2%):</dt>
-                    <dd class="text-end text-dark mb-0">$16.94</dd>
+                    <dd class="text-end text-dark mb-0">$ {{ tax|floatformat:2 }}</dd>
                 </dl>
                 <hr class="my-2 border-secondary-subtle">
                 <dl class="d-flex justify-content-between mb-3">
                     <dt class="fw-bold fs-6">Grand Total:</dt>
-                    <dd class="text-end fw-bold fs-5 text-dark mb-0">$863.94</dd>
+                    <dd class="text-end fw-bold fs-5 text-dark mb-0">$ {{ grand_total|floatformat:2 }}</dd>
                 </dl>
 
                 <!--  Payment Cards Icons-->
