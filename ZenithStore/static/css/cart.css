@@ -9,6 +9,7 @@
   --zenith-text-muted: #64748b;
   --zenith-danger: #dc2626;
   --zenith-danger-bg: #fef2f2;
+  --zenith-dark: #0f172a;
 }
 
 /* Background & Main Layout */
@@ -16,6 +17,33 @@
   background-color: var(--zenith-bg);
   min-height: 85vh;
   padding: 3rem 0;
+}
+
+/* Back Button & Top Navigation */
+.detail-top-nav {
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid var(--zenith-border);
+  color: var(--zenith-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--zenith-dark);
+  color: var(--zenith-yellow);
+  border-color: var(--zenith-dark);
+  text-decoration: none;
 }
 
 /* Cards (Table Wrap & Summary) */
