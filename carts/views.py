@@ -1,6 +1,6 @@
 from django.db.models import ObjectDoesNotExist
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from store.models import Product
 from .  models import Cart, CartItem
 
@@ -45,6 +45,28 @@ def add_cart(request, product_id):
     # exit()
 
     # redirect to cart
+    return redirect('cart')
+
+# remove cart function
+def remove_cart(request, product_id):
+    cart=Cart.objects.get(cart_id=cart_id(request))
+    product=get_object_or_404(Product, id=product_id)
+    cart_item=CartItem.objects.get(product=product, cart=cart)
+    # condition
+    if cart_item.quantity > 1:
+        # decreament the quantity of the cart item by 1
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()    
+    return redirect('cart')
+
+# remove cart item function
+def remove_cart_item(request, product_id):
+    cart=Cart.objects.get(cart_id=cart_id(request))
+    product=get_object_or_404(Product, id=product_id)
+    cart_item=CartItem.objects.get(product=product, cart=cart)
+    cart_item.delete()
     return redirect('cart')
 
 # cart function
