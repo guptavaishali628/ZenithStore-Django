@@ -72,7 +72,7 @@
                         <img src="{{ cart_item.product.images.url }}" class="img-sm rounded" alt="Product">
                       </div>
                       <figcaption class="info ms-3">
-                        <a href="#" class="title fw-bold text-dark text-truncate">{{ cart_item.product_name}}</a>
+                        <a href="{{ cart_item.product.get_url }}" class="title fw-bold text-dark text-truncate">{{ cart_item.product.product_name}}</a>
                         <p class="text-muted small mb-0">Color: Blue</p>
                         <p class="text-muted small mb-0">Size: M</p>
                       </figcaption>
@@ -145,7 +145,7 @@
                     <span>Checkout</span>
                     <i class="fa-solid fa-arrow-right ms-1"></i>
                     </a>
-                    <a href="#" class="btn btn-continue-shop">
+                    <a href="{% url 'store' %}" class="btn btn-continue-shop">
                     Continue Shopping
                     </a>
                 </div>
