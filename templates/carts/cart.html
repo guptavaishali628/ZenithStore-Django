@@ -17,7 +17,35 @@
         <span>Back</span>
       </a>
     </div>
+    {% if not cart_items %}
+    <!-- meassage here -->
+    <div class="row justify-content-center my-4">
+    <div class="col-md-7 col-lg-5 text-center">
+      <div class="card empty-cart-card p-4 p-md-5">
+        
+        <!-- Cart Icon Inside Soft Badge -->
+        <div class="empty-cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        
+        <!-- Heading & Message -->
+        <h3 class="empty-cart-title mb-2">Your shopping cart is empty</h3>
+        <p class="empty-cart-text mb-4">
+          Looks like you haven't added anything to your cart yet. Explore our store to find your favorite products.
+        </p>
 
+        <!-- Continue Shopping Button -->
+        <div>
+          <a href="{% url 'store' %}" class="btn-empty-cart-shop">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Continue Shopping</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    {% else %}
     <div class="row">
       <!--LEFT COLUMN: CART ITEMS TABLE -->
       <aside class="col-lg-9">
@@ -130,7 +158,7 @@
             </div>
         </aside>
     </div>
-
+  {% endif %}
 </div>
 </section>
 {% endblock %}

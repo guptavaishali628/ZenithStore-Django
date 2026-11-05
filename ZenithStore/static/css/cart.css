@@ -45,6 +45,81 @@
   border-color: var(--zenith-dark);
   text-decoration: none;
 }
+/*  EMPTY CART SECTION  */
+
+/* Card Container */
+.empty-cart-card {
+  background-color: #ffffff;
+  border: 1px solid var(--zenith-border) !important;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Rounded Icon Badge */
+.empty-cart-icon {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--zenith-bg);
+  border: 1px solid var(--zenith-border);
+  border-radius: 50%;
+}
+
+.empty-cart-icon i {
+  color: var(--zenith-text-muted);
+  font-size: 2.2rem;
+}
+
+/* Headings & Text */
+.empty-cart-title {
+  color: var(--zenith-navy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.empty-cart-text {
+  color: var(--zenith-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Action Button */
+.btn-empty-cart-shop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--zenith-navy);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.65rem 1.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--zenith-navy);
+  text-decoration: none;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.btn-empty-cart-shop:hover {
+  background-color: var(--zenith-yellow);
+  border-color: var(--zenith-yellow);
+  color: var(--zenith-navy);
+  text-decoration: none;
+}
+
+.btn-empty-cart-shop:focus,
+.btn-empty-cart-shop:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 /* Cards (Table Wrap & Summary) */
 .card-cart-items,
