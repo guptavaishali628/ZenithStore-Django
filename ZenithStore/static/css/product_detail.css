@@ -187,8 +187,7 @@ body {
 }
 
 .btn-zenith-added {
-  background-color: #10b981;
-  border-color: #10b981;
+  background-color: #10b92f;
   color: #ffffff;
   font-weight: 700;
   border-radius: 8px;
@@ -197,12 +196,45 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  pointer-events: none;
+  cursor: default;
+  opacity: 1;
 }
 
 .btn-zenith-added:hover {
-  background-color: #059669;
+  background-color: #047915;
   color: #ffffff;
   text-decoration: none;
+}
+
+/* View Cart Button Styling with Spacing */
+.btn-zenith-viewcart {
+  background-color: transparent;
+  border: 1.5px solid var(--zenith-dark);
+  color: var(--zenith-dark);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  margin-left: 14px; 
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-zenith-viewcart:hover {
+  background-color: var(--zenith-dark);
+  color: var(--zenith-yellow);
+  border-color: var(--zenith-dark);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(10, 17, 40, 0.15);
+}
+
+.btn-zenith-viewcart:active {
+  transform: scale(0.98);
 }
 
 /* out of stock msg  */
