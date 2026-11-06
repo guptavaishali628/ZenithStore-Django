@@ -70,10 +70,10 @@
                     </div>
                 </div>
 
-                <a href="#" class="cart-button">
+                <a href="{% url 'cart' %}" class="cart-button">
                     <div class="cart-icon-wrapper">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="cart-badge">0</span>
+                        <span class="cart-badge">{{cart_count}}</span>
                     </div>
                 </a>
             </div>
