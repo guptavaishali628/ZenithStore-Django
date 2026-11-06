@@ -135,7 +135,7 @@
                         <span class="price">${{ product.price|floatformat:2 }}</span>
                     </div>
                     </div>
-                    <a href="{% url 'add_cart' product.id %}" class="btn btn-zenith-primary mt-3">Add to cart</a>
+                    <a href="{{ product.get_url }}" class="btn btn-zenith-primary mt-3">View Details</a>
                 </figcaption>
                 </figure>
             </div>
