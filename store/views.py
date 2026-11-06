@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 from carts.models import CartItem
 from carts.views import cart_id
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 # Create your views here.
 
 # store function
@@ -11,18 +12,34 @@ def store(request, category_slug=None):
         products = None
 
         if category_slug != None:
-           categories = get_object_or_404(Category, slug=category_slug)
-           products = Product.objects.all().filter(category=categories, is_available=True)
-           product_count = products.count()     
+            categories = get_object_or_404(Category, slug=category_slug)
+            products = Product.objects.filter(category=categories, is_available=True) 
+            # here we get 6 product at once page for pagination(pass products and number or product to show)
+            paginator = Paginator(products, 6)
+            page = request.GET.get('page')
+            # here we store the 6 products and that this will pass into the templates to show the users
+            paged_products = paginator.get_page(page)
+          
+            product_count = products.count()     
 
         else:   
+           # here we get all products
            products = Product.objects.all().filter(is_available=True)
+           
+           # here we get 6 product at once page for pagination(pass products and number or product to show)
+           paginator = Paginator(products, 6)
+           page = request.GET.get('page')
+           # here we store the 6 products and that this will pass into the templates to show the users
+           paged_products = paginator.get_page(page)
+
            # product count
            product_count = products.count()
         context={
                 'categories':categories,
-                'products':products,
-                'product_count':product_count,
+                 # 'products':products,
+                 # replace products to paged_products
+                 'products': paged_products,
+                 'product_count':product_count,
 
         }
         return render(request,'store/store.html', context)
