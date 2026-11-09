@@ -246,6 +246,80 @@ body {
   height: 70px;
   overflow: hidden;
 }
+/* ZenithStore - No Results Found Card */
+
+.no-results-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 34, 58, 0.08);
+  border-radius: 14px;
+  padding: 48px 24px;
+  margin: 20px 0 35px 0;
+  box-shadow: 0 8px 24px rgba(13, 34, 58, 0.05);
+}
+
+/* Icon with soft yellow glow & deep blue icon */
+.no-results-icon {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffd166;
+  box-shadow: 0 6px 16px rgba(255, 183, 3, 0.25);
+}
+
+.no-results-icon i {
+  font-size: 34px;
+  color: #0d223a; /* Deep blueish accent */
+}
+
+/* Headings & Text */
+.no-results-title {
+  color: #0d223a;
+  font-weight: 700;
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.no-results-text {
+  color: #5c6b7e;
+  font-size: 0.95rem;
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  line-height: 1.6;
+}
+
+.no-results-text strong {
+  color: #0d223a;
+}
+
+/* Action Button */
+.btn-zenith-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0d223a; /* Deep Blue background */
+  color: #ffb703 !important; /* Zenith Warm Golden Yellow text */
+  border: 1px solid #0d223a;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-zenith-explore:hover {
+  background-color: #ffb703; /* Yellow on hover */
+  color: #0d223a !important; /* Blue text on hover */
+  border-color: #ffb703;
+  box-shadow: 0 4px 12px rgba(255, 183, 3, 0.35);
+  transform: translateY(-1px);
+}
 
 /* Title (Without vendor warnings) */
 .card-product-grid .title {

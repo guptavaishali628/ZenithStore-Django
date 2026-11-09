@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
 from .models import Product, Category
 from carts.models import CartItem
 from carts.views import cart_id
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Q
 # Create your views here.
 
 # store function
@@ -61,3 +63,24 @@ def product_detail(request, category_slug, product_slug):
         }
         return render(request,'store/product_detail.html', context)
 
+# search function
+def search(request):
+    products = Product.objects.none()  # Default to empty queryset
+    product_count = 0
+    keyword = ''  # Default empty
+
+    if 'keyword' in request.GET:
+        keyword = request.GET.get('keyword', '').strip()
+        if keyword:
+            # Adjust the lookup fields (e.g., name, description) to match your Product model
+            products = Product.objects.order_by('-created_date').filter(
+              Q(description__icontains=keyword)| Q(product_name__icontains=keyword)
+            )
+            product_count = products.count()
+
+    context = {
+        'products': products,
+        'product_count': product_count,
+        'keyword': keyword,
+    }
+    return render(request, 'store/store.html', context)

@@ -11,7 +11,12 @@
 <!-- SECTION PAGETOP -->
 <section class="section-pagetop">
   <div class="container">
+    {% if 'search' in request.path %}
+    <!-- search result -->
+    <h2 class="title-page">Search Result</h2>
+    {% else %}
     <h2 class="title-page">Our Store</h2>
+    {% endif %}
   </div>
 </section>
 <!--  SECTION PAGETOP END-->
@@ -121,6 +126,7 @@
         </header>
 
         <div class="row">
+        {% if products %}
         {% for product in products %}
           <!-- Product Card 1 -->
             <div class="col-6 col-md-4">
@@ -139,7 +145,31 @@
                 </figcaption>
                 </figure>
             </div>
-          {% endfor %}
+        {% endfor %}    
+        {% else %}
+            <!-- No Results Found State -->
+            <div class="col-12">
+              <div class="no-results-card text-center">
+                <div class="no-results-icon">
+                  <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="no-results-title">No Products Found</h3>
+                <p class="no-results-text">
+                  {% if request.GET.keyword %}
+                    We couldn't find any matches for "<strong>{{ request.GET.keyword }}</strong>".
+                  {% else %}
+                    There are no products available in this category right now.
+                  {% endif %}
+                  Please check the spelling or try searching for another item.
+                </p>
+                <div class="no-results-actions">
+                  <a href="{% url 'store' %}" class="btn btn-zenith-explore">
+                    <i class="fa-solid fa-arrow-rotate-left mr-1"></i> Browse All Products
+                  </a>
+                </div>
+              </div>
+            </div>
+        {% endif %}
         </div>
 
         <!-- Static Pagination -->

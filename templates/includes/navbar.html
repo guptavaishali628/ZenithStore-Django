@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <a href="{% url 'store' %}" class="store-link-btn" style="text-decoration: none;">Store</a>
-                <form action="#" method="GET" class="search-form">
-                    <input type="text" placeholder="Search" name="q" class="search-input">
+                <form action="{% url 'search' %}" method="GET" class="search-form">
+                    <input type="text" placeholder="Search" name="keyword" class="search-input" value="{{ keyword }}">
                     <button type="submit" class="search-submit-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
