@@ -24,7 +24,7 @@ def store(request, category_slug=None):
 
         else:   
            # here we get all products
-           products = Product.objects.all().filter(is_available=True)
+           products = Product.objects.all().filter(is_available=True).order_by('id') # adding order_by to remove unordered_list warning
            
            # here we get 6 product at once page for pagination(pass products and number or product to show)
            paginator = Paginator(products, 6)
