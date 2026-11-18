@@ -55,29 +55,26 @@
               <div class="variation-group">
                 <label class="variation-label">Choose Color</label>
                 <div class="variation-chips">
-                  <select name="color" class="variation-select">
-                    <option value="red">Red</option>
-                    <option value="Yellow">Yellow</option>
-                    <option value="Green">Green</option>
-                    <option value="Pink">Pink</option>
-                    <option value="Blue">Blue</option>
+                  <select name="color" class="variation-select form-control" required>
+                    <option value="" disabled selected>choose color</option>
+                    {% for i in single_product.variation_set.all%}
+                    <option value="{{ i.variation_value}}">{{ i.variation_value}}</option>
+                    {% endfor %}
                   </select>
                 </div>
               </div>
 
-              <!-- Select Size (Dropdown Styled) -->
+              <!-- Select Size (Dropdown Styled)
               <div class="variation-group">
                 <label class="variation-label">Select Size</label>
                 <div class="variation-chips">
                   <select name="size" class="variation-select">
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
+                    {% for i in single_product.variation_set.all%}
+                    <option value="{{ i.variation_size}}">{{ i.variation_size}}</option>
+                    {% endfor %}
                   </select>
                 </div>
-              </div>
+              </div> -->
 
               <!-- Add to Cart Button -->
               <div class="mt-4">

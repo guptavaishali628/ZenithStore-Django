@@ -16,8 +16,8 @@ def cart_id(request):
 def add_cart(request, product_id):
     # take the value from brows url because we are using get request(for product variation)
     color = request.GET['color'] # color= name of selected value from dropdown
-    size = request.GET['size']
-    # return HttpResponse(color + '' + size)
+    # size = request.GET['size']
+    return HttpResponse(color)
     exit()
 
     # get the product
