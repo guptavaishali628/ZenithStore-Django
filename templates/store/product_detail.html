@@ -36,8 +36,8 @@
         <!-- Right Column: Product Information & Controls -->
         <main class="col-md-6 border-left">
           <!-- for products variation intro we using form -->
-          <form action="{% url 'add_cart' single_product.id %}" method="GET">
-            <!-- {% csrf_token %} -->
+          <form action="{% url 'add_cart' single_product.id %}" method="POST">
+            {% csrf_token %}
             <article class="product-info-wrap">
               
               <!-- Product Title -->
@@ -57,24 +57,25 @@
                 <div class="variation-chips">
                   <select name="color" class="variation-select form-control" required>
                     <option value="" disabled selected>choose color</option>
-                    {% for i in single_product.variation_set.all%}
-                    <option value="{{ i.variation_value}}">{{ i.variation_value}}</option>
+                    {% for i in single_product.variation_set.colors %}
+                    <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
                     {% endfor %}
                   </select>
                 </div>
               </div>
 
-              <!-- Select Size (Dropdown Styled)
+               <!-- Select Size (Dropdown Styled) -->
               <div class="variation-group">
                 <label class="variation-label">Select Size</label>
                 <div class="variation-chips">
-                  <select name="size" class="variation-select">
-                    {% for i in single_product.variation_set.all%}
-                    <option value="{{ i.variation_size}}">{{ i.variation_size}}</option>
+                  <select name="size" class="variation-select form-control" required>
+                    <option value="" disabled selected>select size</option>
+                    {% for i in single_product.variation_set.sizes %}
+                    <option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
                     {% endfor %}
                   </select>
                 </div>
-              </div> -->
+              </div>
 
               <!-- Add to Cart Button -->
               <div class="mt-4">
