@@ -14,6 +14,12 @@ def cart_id(request):
     return cart
 
 def add_cart(request, product_id):
+    # take the value from brows url because we are using get request(for product variation)
+    color = request.GET['color'] # color= name of selected value from dropdown
+    size = request.GET['size']
+    # return HttpResponse(color + '' + size)
+    exit()
+
     # get the product
     product = Product.objects.get(id=product_id)
     try:

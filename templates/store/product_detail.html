@@ -35,8 +35,9 @@
 
         <!-- Right Column: Product Information & Controls -->
         <main class="col-md-6 border-left">
-          <form action="{% url 'add_cart' single_product.id %}" method="POST">
-            {% csrf_token %}
+          <!-- for products variation intro we using form -->
+          <form action="{% url 'add_cart' single_product.id %}" method="GET">
+            <!-- {% csrf_token %} -->
             <article class="product-info-wrap">
               
               <!-- Product Title -->
@@ -50,49 +51,31 @@
                 {{single_product.description}}
               </p>
 
-              <!-- Choose Color (Chip Style) -->
+             <!-- Choose Color (Dropdown Styled) -->
               <div class="variation-group">
                 <label class="variation-label">Choose Color</label>
                 <div class="variation-chips">
-                  <label class="btn-chip">
-                    <input type="radio" name="color_demo" value="silver">
-                    <span class="btn-label">Silver</span>
-                  </label>
-                  <label class="btn-chip">
-                    <input type="radio" name="color_demo" value="gray">
-                    <span class="btn-label">Gray</span>
-                  </label>
-                  <label class="btn-chip">
-                    <input type="radio" name="color_demo" value="gold" checked>
-                    <span class="btn-label">Gold</span>
-                  </label>
-                  <label class="btn-chip">
-                    <input type="radio" name="color_demo" value="black">
-                    <span class="btn-label">Black</span>
-                  </label>
+                  <select name="color" class="variation-select">
+                    <option value="red">Red</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Blue">Blue</option>
+                  </select>
                 </div>
               </div>
 
-              <!-- Select Size (Chip Style) -->
+              <!-- Select Size (Dropdown Styled) -->
               <div class="variation-group">
                 <label class="variation-label">Select Size</label>
                 <div class="variation-chips">
-                  <label class="btn-chip">
-                    <input type="radio" name="size_demo" value="s">
-                    <span class="btn-label">S</span>
-                  </label>
-                  <label class="btn-chip">
-                    <input type="radio" name="size_demo" value="m" checked>
-                    <span class="btn-label">M</span>
-                  </label>
-                  <label class="btn-chip">
-                    <input type="radio" name="size_demo" value="l">
-                    <span class="btn-label">L</span>
-                  </label>
-                  <label class="btn-chip">
-                    <input type="radio" name="size_demo" value="xl">
-                    <span class="btn-label">XL</span>
-                  </label>
+                  <select name="size" class="variation-select">
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                  </select>
                 </div>
               </div>
 
