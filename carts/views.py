@@ -1,7 +1,7 @@
 from django.db.models import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
-from store.models import Product
+from store.models import Product, Variation
 from .  models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -14,14 +14,26 @@ def cart_id(request):
     return cart
 
 def add_cart(request, product_id):
-    # take the value from brows url because we are using get request(for product variation)
-    if request.method == 'POST':
-       color = request.POST.get('color') # color= name of selected value from dropdown
-       size = request.POST.get('size')
-       print(color, size)
-
     # get the product
     product = Product.objects.get(id=product_id)
+    product_variation = []
+    # take the value from brows url because we are using get request(for product variation)
+    if request.method == 'POST':
+    #    color = request.POST.get('color') # color= name of selected value from dropdown
+    #    size = request.POST.get('size')
+    #    print(color, size)
+    #    here will will make our code to handle all the situations instead of only dealing with color and size
+        for item in request.POST:
+            key = item
+            value = request.POST[key]
+            # key and value should match from the variation model values
+
+            try:
+                variation = Variation.objects.get(product=product, variation_category__iexact=key, variation_value__iexcat=value)
+                product_variation.append(variation)
+            except:
+                pass    
+
     try:
         #get the cart using the cart_id present in the session
         cart=Cart.objects.get(cart_id=cart_id(request)) 
