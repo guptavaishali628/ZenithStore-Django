@@ -8,6 +8,6 @@ urlpatterns = [
     # path for decrement
     path('remove_cart/<int:product_id>/', views.remove_cart, name='remove_cart'),
     # path for remove cart item
-    path('remove_cart_item/<int:product_id>/', views.remove_cart_item, name='remove_cart_item'),
+    path('remove_cart_item/<int:product_id>/<int:cart_item_id>/', views.remove_cart_item, name='remove_cart_item'),
 
 ]
