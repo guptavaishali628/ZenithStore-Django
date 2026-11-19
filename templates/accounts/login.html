@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="zenith-auth-section">
+  <div class="container">
+    <div class="card mx-auto zenith-auth-card zenith-auth-card--login">
+      <div class="card-body p-4">
+        
+        <!-- Header -->
+        <div class="mb-3">
+          <h4 class="zenith-auth-title mb-1">Sign in</h4>
+          <p class="text-muted mb-0" style="font-size: 0.85rem;">Welcome back to <strong>ZenithStore</strong></p>
+        </div>
+
+        <form action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
+          
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="zenith-auth-label">Email</label>
+            <div class="input-group zenith-input-box">
+              <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+              {{ form.email }}
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-2">
+            <label class="zenith-auth-label">Password</label>
+            <div class="input-group zenith-input-box">
+              <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+              {{ form.password }}
+              <button type="button" class="zenith-eye-toggle" onclick="togglePass('id_password', this)">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Forgot Password Link -->
+          <div class="d-flex justify-content-end mb-4">
+            <a href="#" class="text-decoration-none zenith-link" style="font-size: 0.82rem;">Forgot password?</a>
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-zenith-primary w-100">
+            Log In
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- Bottom Register Link -->
+    <p class="text-center mt-3 mb-0 text-muted" style="font-size: 0.88rem;">
+      Don't have an account? 
+      <a href="{% url 'register' %}" class="text-decoration-none zenith-link">Sign up</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  // Add placeholders automatically via JS without touching forms.py
+  document.addEventListener("DOMContentLoaded", function () {
+    const placeholders = {
+      id_email: "Email address",
+      id_password: "Password"
+    };
+    for (const [id, text] of Object.entries(placeholders)) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.placeholder = text;
+        if (id === "id_password") el.type = "password";
+      }
+    }
+  });
+
+  function togglePass(id, btn) {
+    const field = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (!field) return;
+    if (field.type === 'password') {
+      field.type = 'text';
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      field.type = 'password';
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  }
+</script>
+{% endblock %}

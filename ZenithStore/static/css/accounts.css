@@ -1,0 +1,121 @@
+/* Common Auth Section (Register, Login, Forgot Password) */
+.zenith-auth-section {
+  background-color: #f4f7fb;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 32px 15px;
+}
+
+/* Base Card (510px for Register) */
+.zenith-auth-card {
+  max-width: 510px;
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  border-top: 3.5px solid #f5b82e;
+  background-color: #ffffff;
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.06);
+}
+
+/* Compact Card Modifier for Login Page */
+.zenith-auth-card--login {
+  max-width: 420px;
+}
+
+.zenith-auth-title {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.45rem;
+}
+
+.zenith-auth-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+/* Fixed Flex Container (No Wrapping!) */
+.zenith-input-box {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  width: 100%;
+}
+
+.zenith-input-box:focus-within {
+  border-color: #2563eb;
+  background-color: #eef4ff;
+  box-shadow: 0 0 0 0.18rem rgba(245, 184, 46, 0.25);
+}
+
+.zenith-input-box .input-group-text {
+  background: transparent !important;
+  border: none !important;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  padding: 0 7px 0 12px;
+  flex-shrink: 0;
+}
+
+/* Targets ALL Django & HTML inputs even without .form-control */
+.zenith-input-box input {
+  flex: 1 1 auto !important;
+  width: 1% !important;
+  min-width: 0 !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  padding: 0.54rem 0.72rem !important;
+  font-size: 0.92rem !important;
+  color: #0f172a !important;
+  box-shadow: none !important;
+}
+
+.zenith-eye-toggle {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 0.88rem;
+  padding: 0 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.zenith-eye-toggle:hover {
+  color: #1e3a8a;
+}
+
+/* Button: Dark Navy -> Golden Yellow on Hover */
+.btn-zenith-primary {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.62rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-zenith-primary:hover,
+.btn-zenith-primary:focus {
+  background-color: #e2b93b !important;
+  color: #0f172a !important;
+}
+
+.zenith-link {
+  color: #2563eb;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.zenith-link:hover {
+  color: #d97706;
+}

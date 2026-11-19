@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="zenith-auth-section">
+  <div class="container">
+    <div class="card mx-auto zenith-auth-card">
+      <div class="card-body p-4">
+        
+        <!-- Header -->
+        <div class="mb-3">
+          <h4 class="zenith-auth-title mb-1">Sign up</h4>
+          <p class="text-muted mb-0" style="font-size: 0.85rem;">Create your <strong>ZenithStore</strong> account</p>
+        </div>
+
+        <form action="{% url 'register' %}" method="POST">
+          {% csrf_token %}
+          
+          <!-- First Name & Last Name -->
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="zenith-auth-label">First name</label>
+              <div class="input-group zenith-input-box">
+                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                {{ form.first_name }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="zenith-auth-label">Last name</label>
+              <div class="input-group zenith-input-box">
+                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                {{ form.last_name }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Email & Phone Number -->
+          <div class="row g-2 mb-3">
+            <div class="col-md-6">
+              <label class="zenith-auth-label">Email</label>
+              <div class="input-group zenith-input-box">
+                <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+                {{ form.email }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="zenith-auth-label">Phone number</label>
+              <div class="input-group zenith-input-box">
+                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                {{ form.phone_number }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Create Password & Repeat Password -->
+          <div class="row g-2 mb-4">
+            <div class="col-md-6">
+              <label class="zenith-auth-label">Create password</label>
+              <div class="input-group zenith-input-box">
+                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                {{ form.password }}
+                <button type="button" class="zenith-eye-toggle" onclick="togglePass('id_password', this)">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="zenith-auth-label">Repeat password</label>
+              <div class="input-group zenith-input-box">
+                <span class="input-group-text"><i class="fa-solid fa-shield-halved"></i></span>
+                {{ form.confirm_password }}
+                <button type="button" class="zenith-eye-toggle" onclick="togglePass('id_confirm_password', this)">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Register Button -->
+          <button type="submit" class="btn btn-zenith-primary w-100">
+            Register
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- Bottom Login Link -->
+    <p class="text-center mt-3 mb-0 text-muted" style="font-size: 0.88rem;">
+      Have an account? 
+      <a href="{% url 'login' %}" class="text-decoration-none zenith-link">Log In</a>
+    </p>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const placeholders = {
+    //they are customise from django model forms
+      // id_first_name: "First name",
+      // id_last_name: "Last name",
+      // id_email: "Email address",
+      // id_phone_number: "Phone number",
+      //id_password: "Create password",
+      //id_confirm_password: "Repeat password"
+     };
+    for (const [id, text] of Object.entries(placeholders)) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.placeholder = text;
+        if (id === "id_password" || id === "id_confirm_password") el.type = "password";
+      }
+    }
+  });
+
+  function togglePass(id, btn) {
+    const field = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (!field) return;
+    if (field.type === 'password') {
+      field.type = 'text';
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      field.type = 'password';
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  }
+</script>
+{% endblock %}
