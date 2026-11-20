@@ -84,6 +84,16 @@
           <button type="submit" class="btn btn-zenith-primary w-100">
             Register
           </button>
+          {% if form.email.errors or form.non_field_errors %}
+            <div class="mt-3 py-2 px-3 rounded-3 d-flex align-items-center justify-content-center" 
+                style="background: linear-gradient(to right, #fff1f2, #ffe4e6); border: 1px solid #fecdd3; border-left: 4px solid #e11d48; color: #9f1239; font-size: 0.85rem; font-weight: 500; gap: 14px; box-shadow: 0 4px 10px rgba(225, 29, 72, 0.08);">
+              <span class="d-inline-flex align-items-center justify-content-center rounded-circle flex-shrink-0" 
+                    style="width: 24px; height: 24px; background-color: #fecdd3; color: #be123c; font-size: 0.8rem;">
+                <i class="fa-solid fa-exclamation"></i>
+              </span>
+              <span>{{ form.email.errors.0 }}<br>{{ form.non_field_errors.0 }}</span>
+            </div>
+          {% endif %}
         </form>
 
       </div>

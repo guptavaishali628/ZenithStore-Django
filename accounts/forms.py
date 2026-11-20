@@ -15,7 +15,17 @@ class RegistrationForm(forms.ModelForm):
         model = Account
         fields = ['first_name', 'last_name', 'phone_number', 'email', 'password']
 
-    # Indent this inside RegistrationForm (4 spaces)
+    # checking if the password==confirm_password then render the form
+    def clean(self):
+        cleaned_data = super(RegistrationForm, self).clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('confirm_password')
+
+        if password != confirm_password:
+            raise forms.ValidationError(
+                "Password does not match!"
+            )    
+
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
         self.fields['first_name'].widget.attrs['placeholder'] = 'Enter First Name'
@@ -40,3 +50,4 @@ class LoginForm(forms.ModelForm):
         self.fields['email'].widget.attrs['placeholder'] = 'Enter Email Address'
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
+
