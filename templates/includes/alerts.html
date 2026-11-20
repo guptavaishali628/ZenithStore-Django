@@ -1,0 +1,26 @@
+{% if messages %}
+    {% for message in messages %}
+    <div id="message" class="container">
+    <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </div>
+    </div>
+    {% endfor %}
+{% endif %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            const messages = document.querySelectorAll('#message');
+            messages.forEach(function(msg) {
+                msg.style.transition = "opacity 0.5s ease";
+                msg.style.opacity = "0";
+                setTimeout(function() {
+                    msg.remove();
+                }, 500);
+            });
+        }, 4000);
+    });
+</script>
