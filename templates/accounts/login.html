@@ -25,7 +25,8 @@
             <label class="zenith-auth-label">Email</label>
             <div class="input-group zenith-input-box">
               <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
-              {{ form.email }}
+              <input type="email" class="form-control" placeholder="Email Address" name="email">
+              <!-- {{ form.email }} -->
             </div>
           </div>
 
@@ -34,7 +35,8 @@
             <label class="zenith-auth-label">Password</label>
             <div class="input-group zenith-input-box">
               <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
-              {{ form.password }}
+              <input type="password" class="form-control" placeholder="enter password" name="password">
+              <!-- {{ form.password }} -->
               <button type="button" class="zenith-eye-toggle" onclick="togglePass('id_password', this)">
                 <i class="fa-regular fa-eye"></i>
               </button>
@@ -50,6 +52,7 @@
           <button type="submit" class="btn btn-zenith-primary w-100">
             Log In
           </button>
+          {% include 'includes/alerts.html' %}
         </form>
 
       </div>

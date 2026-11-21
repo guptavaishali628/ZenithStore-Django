@@ -61,6 +61,7 @@
 
             <!-- User Auth & Cart -->
             <div class="navbar-actions">
+                {% if user.id is None %}
                 <div class="user-greeting">
                     <span class="guest-text">Welcome guest!</span>
                     <div class="auth-links">
@@ -69,6 +70,16 @@
                         <a href="{% url 'register' %}" class="text-decoration-none">Register</a>
                     </div>
                 </div>
+                {% else %}
+                <div class="user-greeting">
+                    <span class="guest-text">Welcome {{user.first_name}}</span>
+                    <div class="auth-links">
+                        <a href="#" class="text-decoration-none">Dashboard</a>
+                        <span class="pipe">|</span>
+                        <a href="{% url 'logout' %}" class="text-decoration-none">Logout</a>
+                    </div>
+                </div>
+                {% endif %}
 
                 <a href="{% url 'cart' %}" class="cart-button">
                     <div class="cart-icon-wrapper">
